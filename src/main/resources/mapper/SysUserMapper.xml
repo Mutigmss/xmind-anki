@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mss.mapper.SysUserMapper">
+
+
+
+    <select id="baselogin" resultType="com.mss.domain.entity.SysUser">
+
+        SELECT
+        *
+        FROM
+        'sys_user' m
+        WHERE
+        m.`username` = #{username};
+
+
+
+    </select>
+
+</mapper>

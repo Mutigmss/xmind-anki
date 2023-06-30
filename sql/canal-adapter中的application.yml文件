@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+
+canal.conf:
+  mode: tcp #tcp kafka rocketMQ rabbitMQ
+  flatMessage: true
+  zookeeperHosts:
+  syncBatchSize: 1000
+  retries: 0
+  timeout:
+  accessKey:
+  secretKey:
+  consumerProperties:
+    # canal tcp consumer
+    canal.tcp.server.host: canal115:11111
+    canal.tcp.zookeeper.hosts:
+    canal.tcp.batch.size: 500
+    canal.tcp.username:
+    canal.tcp.password:
+  srcDataSources:
+    defaultDS:
+      url: jdbc:mysql://mysql:3306/anki?useUnicode=true
+      username: root
+      password: 123456
+  canalAdapters:
+  - instance: example # canal instance Name or mq topic name
+    groups:
+    - groupId: g1
+      outerAdapters:
+      - name: logger
+      - name: es7
+        hosts: es7162:9200 # 127.0.0.1:9200 for rest mode
+        properties:
+          mode: rest
+          # security.auth: test:123456 #  only used for rest mode
+          # dailyhub-es为elasticsearch名字
+          cluster.name: dailyhub-es

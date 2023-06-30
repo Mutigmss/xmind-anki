@@ -1,0 +1,223 @@
+
+postman创建es索引表语句语法
+
+语法: put 8.134.24.173:9200/表名(索引名,都必须为小写形式)
+     {
+     "mappings":{
+     ·····
+     }
+     }
+
+示例: put 139.159.204.234:9200/card
+     {
+       "mappings": {
+         "properties": {
+           "id":{
+             "type":"integer"
+           },
+           "user_id":{
+             "type":"integer"
+           },
+           "type":{
+             "type":"keyword"
+           },
+           "question":{
+             "type":"text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "answer":{
+             "type":"text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "title":{
+             "type":"text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "note": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "analysis": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "word": {
+             "type": "keyword",
+              "copy_to": "all"
+           },
+           "option":{
+           "type":"text",
+            "copy_to": "all"
+           },
+           "interpretation": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "personal_note": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "front": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "back": {
+             "type": "text",
+             "analyzer": "ik_max_word",
+             "search_analyzer": "ik_smart",
+              "copy_to": "all"
+           },
+           "belong_to_box_id":{
+             "type":"integer"
+           },
+           "belong_to_box_name":{
+             "type":"text"
+           },
+           "update_time": {
+             "type": "date",
+             "format": "date_optional_time||epoch_millis"
+           },
+           "create_time": {
+             "type": "date",
+             "format": "date_optional_time||epoch_millis"
+           },
+           "last_learn_time": {
+             "type": "date",
+             "format": "date_optional_time||epoch_millis"
+           },
+           "is_public_content":{
+             "type":"integer"
+           },
+           "learn_count":{
+             "type":"integer"
+           },
+           "del_flag":{
+             "type":"integer"
+           },
+           "all":{
+            "type": "text",
+            "analyzer": "ik_max_word"
+           }
+         }
+       }
+     }
+
+
+
+
+     示例: put 139.159.204.234:9200/card
+          {
+            "mappings": {
+              "properties": {
+                "id":{
+                  "type":"integer"
+                },
+                "user_id":{
+                  "type":"integer"
+                },
+                "type":{
+                  "type":"keyword"
+                },
+                "question":{
+                  "type":"text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "answer":{
+                  "type":"text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "title":{
+                  "type":"text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "note": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "analysis": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "word": {
+                  "type": "keyword",
+                   "copy_to": "all"
+                },
+                "option":{
+                "type":"text",
+                 "copy_to": "all"
+                },
+                "interpretation": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "personal_note": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "front": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "back": {
+                  "type": "text",
+                  "analyzer": "ik_max_word",
+                  "search_analyzer": "ik_smart",
+                   "copy_to": "all"
+                },
+                "belong_to_box_id":{
+                  "type":"integer"
+                },
+                "belong_to_box_name":{
+                  "type":"text"
+                },
+                "update_time": {
+                  "type": "date",
+                  "format": "date_optional_time||epoch_millis"
+                },
+                "create_time": {
+                  "type": "date",
+                  "format": "date_optional_time||epoch_millis"
+                },
+                "last_learn_time": {
+                  "type": "date",
+                  "format": "date_optional_time||epoch_millis"
+                },
+                "all":{
+                 "type": "text",
+                 "analyzer": "ik_max_word"
+                }
+              }
+            }
+          }

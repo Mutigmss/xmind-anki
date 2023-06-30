@@ -1,0 +1,52 @@
+
+
+该文件位于docker exec -it adapter115 /bin/bash
+     cd conf/es7下
+
+     文件后缀为yml
+
+
+
+
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+#   index对应的是es索引名称
+  _index: card
+  _id: _id
+  _type: _doc
+  upsert: true
+#  pk: id
+# 把要同步的mysql表中的各个字段与es索引中的字段一一映射对应好
+  sql: "
+SELECT
+        c.id AS _id,
+        c.user_id AS user_id,
+        c.question AS question,
+        c.answer AS answer,
+        c.title AS title,
+        c.note AS note,
+        c.type AS type,
+        c.option AS option,
+        c.analysis as analysis,
+        c.word AS word,
+        c.interpretation AS interpretation,
+        c.personal_note AS personal_note,
+        c.front AS front,
+        c.back AS back,
+        c.belong_to_box_id AS belong_to_box_id,
+        c.belong_to_box_name AS belong_to_box_name,
+        c.update_time AS update_time,
+        c.create_time AS create_time,
+        c.del_flag AS del_flag
+FROM
+        public_card c  "
+
+  commitBatch: 3000
+
+  # _index: card
+  #sql:"SELECT * FROM public_card"
+  #  objFields:
+  #    _labels: array:;
+  #   etlCondition: "where c.c_time>={}"

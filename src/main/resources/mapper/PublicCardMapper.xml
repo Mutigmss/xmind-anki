@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mss.mapper.PublicCardMapper">
+
+    <select id="searchByKeyWord" resultType="com.mss.domain.entity.PublicCard">
+
+
+        select * from public_card where
+        MATCH(`question`,`answer`,`title`,`note`,`analysis`,`word`,
+                                    `interpretation`,`front`,`back`)
+        against(#{keyword})
+
+
+    </select>
+
+
+    <select id="searchCardByUserId" resultType="com.mss.domain.entity.PublicCard">
+        select * from public_card c where c.user_id=#{id}
+    </select>
+
+
+</mapper>

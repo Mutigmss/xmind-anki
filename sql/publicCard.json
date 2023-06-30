@@ -1,0 +1,91 @@
+
+{
+  "mappings": {
+    "properties": {
+      "id":{
+        "type":"integer"
+      },
+      "user_id":{
+        "type":"integer"
+      },
+      "type":{
+        "type":"keyword"
+      },
+      "question":{
+        "type":"text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "answer":{
+        "type":"text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "title":{
+        "type":"text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "note": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "analysis": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "word": {
+        "type": "keyword"
+      },
+      "interpretation": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "personal_note": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "front": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "back": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "belong_to_box_id":{
+        "type":"integer"
+      },
+      "belong_to_box_name":{
+        "type":"text"
+      },
+      "update_time": {
+        "type": "date",
+        "format": "date_optional_time||epoch_millis"
+      },
+      "create_time": {
+        "type": "date",
+        "format": "date_optional_time||epoch_millis"
+      },
+      "last_learn_time": {
+        "type": "date",
+        "format": "date_optional_time||epoch_millis"
+      },
+      "is_public_content":{
+        "type":"integer"
+      },
+      "learn_count":{
+        "type":"integer"
+      },
+      "del_flag":{
+        "type":"integer"
+      }
+    }
+  }
+}
