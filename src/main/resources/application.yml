@@ -1,43 +1,21 @@
 server:
   port: 8848
-# DataSource Config
 spring:
   datasource:
-#   driver-class-name: com.mysql.cj.jdbc.Driver
-    #&useSSL=false
-    url: jdbc:mysql://139.159.204.234:3306/anki?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-#localhost
-#华为云服务器MySQL数据库信息
-#139.159.204.234:3306/anki
+    url: jdbc:mysql://localhost:3306/anki?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: mss123
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-#     type: com.alibaba.druid.pool.DruidDataSource
-#阿里云服务器mysql数据库信息
-#8.134.24.173:3306/db_test?
-#    username: root
-#    password: mss
   servlet:
     multipart:
       max-file-size: 30MB
       max-request-size: 100MB
-# 阿里云redis
-#  redis:
-#    host: 8.134.24.173
-#    password: mss123
-#    port: 6379
-#  华为云redis
   redis:
-    host: 139.159.204.234
-    password: mss
+    host: localhost
+    password: root
     port: 6379
-
-#  elasticsearch:
-#    uris: 8.134.24.173:9200
-#    username:
-#    password:
 elasticsearch:
-  host: 139.159.204.234
+  host: localhost
   port: 9200
 mybatis-plus:
   configuration:
@@ -53,8 +31,6 @@ mybatis-plus:
 openai:
   model: ${OPENAI_MODEL:text-davinci-003}
   apiKey: ${OPENAI_API_KEY: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}
-#  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
-#  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
 wx:
    appId: wxe1d4882a9a94b849
    appSecret: 0e01cb220f5083c01fd523f497f4cb12
@@ -62,8 +38,8 @@ wx:
 
 # 阿里云短信服务
 aliyun:
-  AccessKeyId: LTAI5tBQfpsARyrifRvvAoLA
-  AccessKeySecret: LmK5FgdkhPFSgngwVGNgK7DgBeHoK4
+  AccessKeyId: 
+  AccessKeySecret: 
 
 # 阿里云云存储OSS配置信息
 # Bucket地址
@@ -71,16 +47,15 @@ aliyun:
     file:
       endpoint: oss-cn-guangzhou.aliyuncs.com
   # Access Key
-      keyid: LTAI5tJpgfTDg94vqwb5PfyA
-      keysecret: cyvhqPFopaiENjXOBcvPqRM38KiM5l
+      keyid: 
+      keysecret: 
   # Bucket名称
       bucketname: test-anki
 baidu:
 #  百度翻译
   fanyi:
     APP_ID: 20230322001610997
-    SECURITY_KEY: OkcK69wWAyHf01YqQ1Ue
-#  百度语音合成
+    SECURITY_KEY: 
   yuyan:
-    App_Key: ItpmwLKENPeGhbinQzoX9idA
-    Secret_Key: EzcA33hLwsgOGpo0CvhoxQba5e7oEmjN
+    App_Key:
+    Secret_Key: 
