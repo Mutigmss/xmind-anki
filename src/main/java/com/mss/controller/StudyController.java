@@ -227,8 +227,6 @@ public class StudyController {
     }
 
 
-//    @ApiOperation("用户创建背书卡(选项区不建议放卡片）")
-//    @PostMapping("/create")
 
 
     @ApiOperation("用户创建智能单词卡")
@@ -366,14 +364,6 @@ public class StudyController {
         return memoryBoxService.resetBoxById(id,request);
 
     }
-
-
-//    @ApiOperation("根据用户id查询该用户所有卡片盒")
-//    @GetMapping("/getBoxByUserId/{id}")
-//    public AjaxResult getBoxByUserId(@PathVariable("id") Long id) {
-//        MemoryBox box = memoryBoxService.getById(id);
-//        return AjaxResult.success(box); }
-
 
 
 
@@ -531,7 +521,7 @@ public class StudyController {
 
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        String apiKey = "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";
+        String apiKey = "your apiKey";
         CustomChatGpt customChatGpt = new CustomChatGpt(apiKey);
         // 根据自己的网络设置吧
         customChatGpt.setResponseTimeout(25000);
