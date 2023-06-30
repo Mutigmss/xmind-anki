@@ -61,10 +61,9 @@ public class TestController {
 
 //        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    没有使用额度了
 //        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   没有使用额度了
-//        fk-o5gBen369d-D0ndZ_PlxsDNPxjq5z7u3bbgn1d9e63k
-//        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
 
-        String apiKey = "fk-o5gBen369d-D0ndZ_PlxsDNPxjq5z7u3bbgn1d9e63k";
+
+        String apiKey = "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";
         CustomChatGpt customChatGpt = new CustomChatGpt(apiKey);
         // 根据自己的网络设置吧
         customChatGpt.setResponseTimeout(55000);
