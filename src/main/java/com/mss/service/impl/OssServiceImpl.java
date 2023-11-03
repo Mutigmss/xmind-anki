@@ -33,18 +33,6 @@ import java.util.UUID;
 @Service
 public class OssServiceImpl implements OssService {
 
-    // 工具类获取值
-//    String endpoint = OosConstant.END_POIND;
-//    String accessKeyId = OosConstant.ACCESS_KEY_ID;
-//    String accessKeySecret = OosConstant.ACCESS_KEY_SECRET;
-//    String bucketName = OosConstant.BUCKET_NAME;
-
-
-//    String endpoint = "oss-cn-guangzhou.aliyuncs.com";
-//    String accessKeyId = "LTAI5tJpgfTDg94vqwb5PfyA";
-//    String accessKeySecret = "cyvhqPFopaiENjXOBcvPqRM38KiM5l";
-//    String bucketName = "test-anki";
-
     //上传头像到oss
     @Override
     public String uploadFileAvatar(MultipartFile file) {
